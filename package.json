@@ -17,6 +17,9 @@
     "node",
     "js"
   ],
+  "bin": {
+    "discord-client": "index.js"
+  },
   "author": "KozmikNano",
   "license": "MIT",
   "bugs": {

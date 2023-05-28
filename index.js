@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 // Call in the modules and config and load the commands
 const startcli = require('./components/setupcli.js');
 const { Client, GatewayIntentBits } = require('discord.js');
