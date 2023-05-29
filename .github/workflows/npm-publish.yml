@@ -1,41 +1,13 @@
-name: Release
+name: NPM Release
   
 on:
-  workflow_dispatch:
-    inputs:
-      version-type:
-        description: How major the changes are [ major | minor | patch | prerelease ]
-        required: true
-        default: patch
+    workflow_run:
+      workflows: [Bump Version]
+      types:
+        - completed
 
 jobs:
-  bump-commit:
-    runs-on: ubuntu-22.04
-    outputs:
-      version: ${{ steps.new-commit.outputs.version }}
-      commit-id: ${{ steps.new-commit.outputs.commit-id }}
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          registry-url: https://registry.npmjs.org/
-          cache: yarn
-      - name: Configure git credentials
-        uses: OleksiyRudenko/gha-git-credentials@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          name: ${{ github.actor }}
-          email: ${{ github.actor }}@users.noreply.github.com
-      - run: yarn config set version-git-message "Release v%s"
-      - run: yarn version --${{ github.event.inputs.version-type }} --preid beta
-      - id: new-commit
-        run: |
-          echo "::set-output name=version::v$(node -pe "require('./package.json').version")"
-          echo "::set-output name=commit-id::$(git log -1 --pretty=format:%H)"
-      - name: push commit
-        run: git push --follow-tags
   publish-npm:
-    needs: bump-commit
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
