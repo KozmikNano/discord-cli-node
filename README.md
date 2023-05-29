@@ -8,7 +8,7 @@ This is a discord client written is node.js for the CLI. It allows you to send a
 - Must be behind a discord bot
 
 ## Usage
-*You can follow ##Instalation to download and install this project or use the npx package (Coming soon.)*
+*You can follow ##Instalation to download and install this project or use the npx package (`npx discord-cli-node`)*
 
 This project was created to help with development where it can be annoying to change windows just to try talking to a command. This can be used to send/read messages.
 
@@ -32,9 +32,9 @@ cd discord-cli-node
 npm install
 ```
 4. Now you can [get a discord bot token](https://discordjs.guide/preparations/setting-up-a-bot-application.html#your-bot-s-token) and do one of two things
-    - Just start the program (`node .`) and paste your token in
+    - Just start the program (`npm start`) and paste your token in
     - Or, create a `.env` file and create a variable like so:
     ```env
     DISCORDTOKEN=yourdiscordtokenhere
     ```
-    Then run the program (`node .`)
+    Then run the program (`npm start`)
