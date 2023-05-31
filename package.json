@@ -1,6 +1,6 @@
 {
   "name": "discord-cli-node",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A discord cli client written in node js.",
   "main": "index.js",
   "scripts": {
