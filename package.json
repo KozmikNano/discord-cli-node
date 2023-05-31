@@ -6,10 +6,7 @@
   "scripts": {
     "start": "node ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kozmiknano/discord-cli-node.git"
-  },
+  "repository": "git+https://github.com/kozmiknano/discord-cli-node.git",
   "keywords": [
     "discord",
     "cli",
@@ -28,9 +25,9 @@
   "homepage": "https://github.com/kozmiknano/discord-cli-node#readme",
   "dependencies": {
     "chalk": "^4.1.2",
-    "cli-select": "^1.1.2",
     "discord.js": "^14.11.0",
     "dotenv": "^16.0.3",
+    "enquirer": "^2.3.6",
     "eslint": "^8.41.0",
     "prompt-sync": "^4.2.0"
   }
