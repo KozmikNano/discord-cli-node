@@ -12,10 +12,10 @@ async function watchCli(client, channel) {
       console.log('You can\'t send empty messages!');
       return;
     }
-    else if (input === '!quit' || input === '!exit' || input === '!q' || input === '!e') {
+    else if (input.toLowerCase() === '!quit' || input.toLowerCase() === '!exit' || input.toLowerCase() === '!q' || input.toLowerCase() === '!e') {
       quit();
     }
-    else if (input === '!ping' || input === '!p') {
+    else if (input.toLowerCase() === '!ping' || input.toLowerCase() === '!p') {
       rl.close();
       await channel.send(await ping(client, channel));
       watchCli(client, channel);
